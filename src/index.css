@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-bg: #F5F5F5;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-muted: #888888;
+  --color-border: #F0F0F0;
+  --color-accent: #D2232A;
+  --color-accent-dark: #B91C1C;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text antialiased selection:bg-accent/5 selection:text-accent font-light;
+    font-weight: 300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light tracking-tight;
+  }
+}
+
+.minimal-card {
+  @apply bg-white border border-border shadow-[0_4px_20px_rgba(0,0,0,0.03)];
+}
+
+.btn-primary {
+  @apply bg-accent hover:bg-accent-dark text-white font-light rounded-none transition-all duration-500 hover:opacity-90 active:scale-[0.98] tracking-widest;
+}
+
+.btn-secondary {
+  @apply bg-white border border-border hover:border-text text-text font-light rounded-none transition-all duration-500 hover:bg-gray-50 tracking-widest;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
