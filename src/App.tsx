@@ -76,17 +76,6 @@ const QUESTIONS: Question[] = [
   }
 ];
 
-const Logo = ({ className = "h-20" }: { className?: string }) => (
-  <div className={`flex items-center ${className}`}>
-    <img 
-      src="/logo.png" 
-      alt="JLVIANA Consultoria Contábil" 
-      className="h-full w-auto object-contain"
-      referrerPolicy="no-referrer"
-    />
-  </div>
-);
-
 export default function App() {
   const [step, setStep] = useState<number>(0); // 0: Welcome, 1-10: Questions, 11: Result
   const [answers, setAnswers] = useState<Record<number, 'sim' | 'nao'>>({});
@@ -120,7 +109,7 @@ export default function App() {
       <div className="max-w-2xl mx-auto px-6 py-16 min-h-screen flex flex-col">
         {/* Header */}
         <header className="mb-20 flex justify-center">
-          <Logo className="h-20" />
+          {/* Logo removed */}
         </header>
 
         {/* Main Content */}
